@@ -1,0 +1,54 @@
+<odoo>
+
+    <record id="view_product_template_inherit_brand" model="ir.ui.view">
+        <field name="name">product.template.form.inherit.brand</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='categ_id']" position="after">
+                <field name="brand_ids" widget="many2many_tags"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_brand_form" model="ir.ui.view">
+        <field name="name">brand.name.form</field>
+        <field name="model">brand.name</field>
+        <field name="arch" type="xml">
+            <form string="Brand">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_brand_list" model="ir.ui.view">
+        <field name="name">brand.name.list</field>
+        <field name="model">brand.name</field>
+        <field name="arch" type="xml">
+            <list string="Brands">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+
+    <record id="action_brand" model="ir.actions.act_window">
+        <field name="name">Brands</field>
+        <field name="res_model">brand.name</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+
+    <menuitem id="menu_brand_root"
+              name="Brands"
+              parent="stock.menu_stock_config_settings"
+              action="action_brand"
+              sequence="25"/>
+
+</odoo>
