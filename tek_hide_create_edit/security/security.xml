@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="module_category_tek_usability" model="ir.module.category">
+        <field name="name">Tek Enterprises</field>
+        <field name="sequence">30</field>
+    </record>
+
+    <record id="group_access_create_edit" model="res.groups">
+        <field name="name">Access Create &amp; Edit</field>
+        <field name="category_id" ref="tek_hide_create_edit.module_category_tek_usability"/>
+        <field name="comment">Users in this group can still create and edit records in the UI.</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="group_access_relational_create_edit" model="res.groups">
+        <field name="name">Access Relational Create &amp; Edit</field>
+        <field name="category_id" ref="tek_hide_create_edit.module_category_tek_usability"/>
+        <field name="comment">Users in this group can still use create and create/edit options in many2one and many2many relational fields.</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+</odoo>
