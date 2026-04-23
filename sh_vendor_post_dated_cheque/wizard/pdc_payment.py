@@ -503,7 +503,7 @@ class PDCWizard(models.Model):
         else:
             # bank_account = self.journal_id._get_journal_inbound_outstanding_payment_accounts()
             # bank_account = bank_account[0].id if bank_account else False
-            bank_account = self.env.company.account_journal_payment_credit_account_id.id
+            bank_account = self.journal_id.outbound_payment_method_line_ids.payment_account_id.id
 
             partner_account = self.get_partner_pdc_account()
 
