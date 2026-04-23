@@ -8,6 +8,18 @@
             <xpath expr="//field[@name='categ_id']" position="after">
                 <field name="brand_ids" widget="many2many_tags"/>
             </xpath>
+            <xpath expr="/form/sheet" position="before">
+                <header>
+                    <button id="button_approve"
+                            name="action_approve"
+                            string="Approve"
+                            class="btn-primary"
+                            type="object"
+                            invisible="active != False"
+                            confirm="Are you sure that you need to approve?"
+                            groups="inv_tek_enterprises_gen_custom.group_product_approve"/>
+                </header>
+            </xpath>
         </field>
     </record>
 

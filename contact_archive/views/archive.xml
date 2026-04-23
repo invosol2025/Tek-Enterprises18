@@ -14,6 +14,7 @@
                                 string="Approve"
                                 class="btn-primary"
                                 type="object"
+                                invisible="active != False"
                                 confirm="Are you sure that you need to approve?"
                                 groups="contact_archive.group_contact_approve"/>
                     </header>
