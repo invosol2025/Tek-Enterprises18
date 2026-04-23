@@ -21,6 +21,7 @@
 
     'data': [
         'security/ir.model.access.csv',
+        'security/security.xml',
         'views/products_template_inherit_views.xml',
         'views/sale_order_inherit_views.xml',
         'views/purchase_order_inherit_views.xml',

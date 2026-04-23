@@ -63,4 +63,21 @@
               action="action_brand"
               sequence="25"/>
 
+
+    <record id="action_product_approval_view" model="ir.actions.act_window">
+            <field name="name">Waiting For Approval</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain">[('active', '=', False)]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem id="waiting_product_approval_root"
+                  name="Waiting For Approval"
+                  parent="stock.menu_stock_root"
+                  action="action_product_approval_view"
+                  groups="inv_tek_enterprises_gen_custom.group_product_approve"
+                  sequence="20"
+        />
+
 </odoo>
