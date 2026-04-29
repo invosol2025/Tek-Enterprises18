@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="module_category_no_edit_create" model="ir.module.category">
+            <field name="name">Many2one Security</field>
+            <field name="description">Manage create and edit actions from many2one fields.</field>
+            <field name="sequence">35</field>
+        </record>
+
+        <record id="group_many2one_create_edit" model="res.groups">
+            <field name="name">Allow Many2one Create/Edit</field>
+            <field name="category_id" ref="module_category_no_edit_create"/>
+        </record>
+
+        <record id="group_record_create" model="res.groups">
+            <field name="name">Allow Page New Button</field>
+            <field name="category_id" ref="module_category_no_edit_create"/>
+        </record>
+
+    </data>
+</odoo>
